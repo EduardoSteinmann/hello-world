@@ -1,3 +1,1 @@
-# hello-world
-meow meeeeeoooowww
-first repo
+# Empty README
