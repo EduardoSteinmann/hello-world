@@ -62,13 +62,14 @@ int main()
         auto begin_l = std::chrono::system_clock::now();
         auto l = linear_search(dataset, val);
         auto end_l = std::chrono::system_clock::now();
-
-        std::cout << "Linear search time looking for " << val << ": " << (end_l - begin_l).count() << ". Index found: " << l << '\n';
+        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_l - begin_l);
+        std::cout << "Linear search time looking for " << val << ": " << duration.count() << ". Index found: " << l << '\n';
 
         auto begin_b = std::chrono::system_clock::now();
         auto b = binary_search(dataset, val);
         auto end_b = std::chrono::system_clock::now();
-        std::cout << "Binary search time looking for " << val << ": " << (end_b - begin_b).count() << ". Index found: " << l << '\n';
+        duration = std::chrono::duration_cast<std::chrono::microseconds>(end_b - begin_b);
+        std::cout << "Binary search time looking for " << val << ": " << duration.count() << ". Index found: " << l << '\n';
     }
 
     return 0;
