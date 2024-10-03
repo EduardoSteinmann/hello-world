@@ -55,6 +55,8 @@ int main()
 {
     std::string values[] = { "not_here", "mzzzz", "aaaaa" };
 
+    auto dataset = getStringData();
+
     for (const auto& val : values)
     {
         auto begin_l = std::chrono::system_clock::now();
@@ -66,7 +68,7 @@ int main()
         auto begin_b = std::chrono::system_clock::now();
         auto b = binary_search(dataset, val);
         auto end_b = std::chrono::system_clock::now();
-        std::cout << "Binary search time looking for " << val << ": " << (end_l - begin_l).count() << ". Index found: " << l << '\n';
+        std::cout << "Binary search time looking for " << val << ": " << (end_b - begin_b).count() << ". Index found: " << l << '\n';
     }
 
     return 0;
