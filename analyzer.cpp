@@ -47,6 +47,12 @@ int main()
     std::chrono::duration<double> duration = endtime - starttime;
     std::cout << "time:" << duration.count() << std::endl;
 
+    starttime = std::chrono::system_clock::now();
+    result = linear_search(data, element);
+    endtime = std::chrono::system_clock::now();
+    std::cout << result << std::endl;
+    duration = endtime - starttime;
+    std::cout << "time:" << duration.count() << std::endl;
 
 
     return 0;
