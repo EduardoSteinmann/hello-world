@@ -55,8 +55,6 @@ int main()
 {
     std::string values[] = { "not_here", "mzzzz", "aaaaa" };
 
-    const auto& dataset = getStringData();
-
     for (const auto& val : values)
     {
         auto begin_l = std::chrono::system_clock::now();
